@@ -125,3 +125,25 @@ while(true)
 
 console.log("Printing Array Address Book : ");
 addressBookArray.forEach(contact => console.log(contact.toString()));
+
+try
+{ 
+    //Creating object for class Address book with parameters for constructor
+    let addressBookObject= new AddressBook("Chetan","Malagoudar","Srinagar","Belgaum","Karnataka","125 121","8570934858","chetan.malagoudar@google.com");
+    //creating array and pushing address book object inside array
+    addressBookArray.push(addressBookObject);
+    addressBookArray.push(new AddressBook("Rashmi","Sollapure","Sector14","Wayand","Kerala","125001","9595959595","rashmi.sollapure@gmail.com"));
+    addressBookArray.push(new AddressBook("Iranna","Magdum","Ameerpet","Hyderabad","Telangana","136 119","7895432343","iranna.magdum@dell.com"))
+    //console.log(addressBookObject.toString());
+    //printing all the details pushed in array
+    console.log("\nPrinting Address book array\n")
+    addressBookArray.forEach(contact=>console.log(contact.toString()));
+    //Editing Details in the address book using filter and foreach
+    console.log("\nEditing the array\n")
+    addressBookArray.filter(contact=>contact.firstName=="Chetan"&& contact.city=="Belgaum").forEach(contact=>{contact.lastName="Patil"; contact.address="Sadashivnagar"} );;
+    addressBookArray.forEach(contact=>console.log(contact.toString()));
+}
+catch(e)
+{
+    console.error(e);
+}
