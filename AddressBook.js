@@ -147,3 +147,15 @@ catch(e)
 {
     console.error(e);
 }
+
+//UC 5 -> Delete Contact
+for(let contact=0;contact<addressBookArray.length;contact++)
+ {
+     if(addressBookArray[contact].firstName=="Chetan" && addressBookArray[contact].lastName=="Patil")
+     {
+         addressBookArray.splice(contact,1);
+     }
+
+ }
+console.log("Deleting Elements : \n");
+addressBookArray.forEach(contact=>console.log(contact.toString()));
