@@ -95,3 +95,33 @@ class AddressBook {
     }
 }
 
+let addressBookArray= new Array();
+
+prompt= require('readline-sync');
+while(true)
+{
+    try
+    {
+     let firstName= prompt.question("Please enter your firstName: ");
+     if(firstName=="")
+      break;
+     let lastName= prompt.question("Please enter your lastName: ");
+     let address= prompt.question("Please enter your Address: ");
+     let city= prompt.question("Please enter your city: ");
+     let state= prompt.question("Please enter your state: ");
+     let zip= prompt.question("Please enter your zip: ");
+     let phoneNumber= prompt.question("Please enter your phonenumber: ");
+     let email = prompt.question("please enter your email: ");
+     let addressBook= new AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email);
+     addressBookArray.push(addressBook);
+     console.log("\nDetails entered successfully, please enter first name to add more details else press enter");
+    }
+    catch(e)
+    {
+        console.error(e);
+        console.log("Please enter input again, values entered is not in correct format");
+    }
+}  
+
+console.log("Printing Array Address Book : ");
+addressBookArray.forEach(contact => console.log(contact.toString()));
