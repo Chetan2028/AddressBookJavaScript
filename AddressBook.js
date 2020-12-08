@@ -113,8 +113,13 @@ while(true)
      let phoneNumber= prompt.question("Please enter your phonenumber: ");
      let email = prompt.question("please enter your email: ");
      let addressBook= new AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email);
-     addressBookArray.push(addressBook);
-     console.log("\nDetails entered successfully, please enter first name to add more details else press enter");
+    
+     // UC 7 -> Check  for duplicates
+    if(addressBookArray.find(contacts=>contacts.firstName==addressBook.firstName && contacts.lastName==addressBook.lastName))
+        throw "Details you are entering already exists";
+    else
+        addressBookArray.push(addressBook);
+    console.log("\nDetails entered successfully, please enter first name to add more details else press enter");
     }
     catch(e)
     {
