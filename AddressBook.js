@@ -159,3 +159,7 @@ for(let contact=0;contact<addressBookArray.length;contact++)
  }
 console.log("Deleting Elements : \n");
 addressBookArray.forEach(contact=>console.log(contact.toString()));
+
+//UC6 -> Count Contacts
+let addressBookCount= addressBookArray.reduce((count,contact)=>count= count+1,0);
+console.log("UC6 Printing the count of address book contacts: "+addressBookCount);
