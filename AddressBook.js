@@ -204,3 +204,20 @@ for(let states of statesArray)
     console.log(addressBookArray.filter(contact=>contact.state==states).forEach(contact=>console.log(contact.toString())));
 }
 
+//UC11 sorting entries on the person name
+//creating personNames array which contain first names and last names of each individual in address book
+let personNames= new Array();
+addressBookArray.forEach(contact=>{
+    if(!personNames.includes(contact.firstName+" "+contact.lastName))
+    {
+        personNames.push(contact.firstName+" "+contact.lastName);
+    }
+});
+//sorting personNames array
+console.log(personNames.sort());
+console.log("\nPrinting contacts sorted by names");
+for(let person of personNames)
+{
+    //filtering contacts by checking if first name and last name include person from person names and printing each contact which is filtered.
+    addressBookArray.filter(contacts=>person.includes(contacts.firstName+" "+contacts.lastName)).forEach(contact=>console.log(contact.toString()));
+}
