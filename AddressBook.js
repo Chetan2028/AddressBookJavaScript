@@ -168,3 +168,13 @@ addressBookArray.forEach(contact=>console.log(contact.toString()));
 //UC6 -> Count Contacts
 let addressBookCount= addressBookArray.reduce((count,contact)=>count= count+1,0);
 console.log("UC6 Printing the count of address book contacts: "+addressBookCount);
+
+
+//UC 8 -> Search contacts by city or state
+console.log("\nUC8 Searcing for contacts in city Hyderabad\n")
+addressBookArray.filter(contact=>contact.city.includes("Hyderabad")).forEach(contact=>console.log(contact.toString()));
+
+addressBookArray.filter(contact => contact.state.includes("Kerala")).forEach(contact=>console.log("UC8 Searching for contacts in Kerala:\n"+contact.toString()));
+
+
+
